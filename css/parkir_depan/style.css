@@ -44,23 +44,38 @@ section {
 
 .denah {
     width: 90%;
-    height: 90%;
+    height: 80%;
     overflow: auto;
     background-color: white;
     border-radius: 10px;
     position: relative;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
+
+/* -------- HEADING ---------------- */
+.header {
+    top: 0;
+    height: 10%;
+    width: 90%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
 
 /*------ PARKING AREA STYLING -------- */
 
 .kantor {
-    height: 180px;
-    width: 280px;
+    height: 60%;
+    width: 330px;
     position: absolute;
-    top: 35%;
+    top: 20%;
     margin: 0;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -72,10 +87,9 @@ section {
     align-items: center;
     justify-content: center;
     margin-left: 10px;
-}
-
-.label {
     font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .seat-row {
@@ -117,37 +131,96 @@ section {
 
 .seat-vertical {
     width: 50px;
-    height: 80px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0px;
+    writing-mode: vertical-rl;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+}
+
+.seat-vertical:hover {
+    color: white;
 }
 
 .seat-horizontal {
-    width: 70px;
+    width: 100px;
     height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
 }
+
+.seat-horizontal:hover {
+    color: white;
+}
+
+/* -------------- SCROLLBAR ---------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 
 /* ---------------- LEGEND ------------------ */
 
 .legend {
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
     border-radius: 5px;
 }
 
 .legend-wrap {
     position: absolute;
+    top: 10px;
+    left: 10px;
     padding: 5px 20px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 20px;
     background-color: #f2f2f2;
     width: fit-content;
     column-gap: 10px;
 }
 
-.legend-wrap .box {
+.legend-wrap .desc-wrap {
     display: flex;
+    justify-content: center;
     align-items: center;
     column-gap: 7px;
+    font-size: 10px;
 }
 
 .legend-wrap-desc {
@@ -159,7 +232,7 @@ section {
     font-family: "Roboto",sans-serif;
 }
 
-.legend-wrap .box .legend-text {
+.legend-wrap .desc-wrap .legend-text {
     font-size: 12;
     font-family: "Roboto", sans-serif;
 }
@@ -177,10 +250,44 @@ section {
 }
 
 
+/*---------- BOTTOM NAVIGATION ---------------*/
+.bottom-nav {
+    position: fixed;
+    width: 40%;
+    height: 10%;
+    align-self: center;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+
+.success-button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: var(--office-color);
+    padding: 10px 20px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.success-button:hover {
+    background-color: #d17436;
+    color: white;
+}
+
 /* ------ WHEN ON SMARTPHONE ------ */
 @media (max-width:1080px) {
     .legend-wrap-desc {
-        flex-direction: column;
+        display: none;
     }
 }
 
@@ -188,4 +295,27 @@ section {
     .legend-wrap {
         display: none;
     }
+
+    .kantor {
+        top: 50%;
+        font-size: 10px;
+        width: 100px;
+    }
+
+    .bottom-nav {
+        margin: 20px 0px;
+        height: 5%;
+        width: 100%;
+        position: relative;
+    }
+
+    .success-button {
+        margin-bottom: 5px;
+        padding: 5px 20px;
+    }
+
+    .header {
+        display: none;
+    }
+
 }
