@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --base-color : #3d5661;
+    --active-color :#1bb0b5;
+    --office-color :#fc7f03;
+}
+
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+  }
+
+
+.header-title {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-family: "Roboto",sans-serif;
+}
+
+section {
+    height: 100%;
+    background-color: var(--base-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.denah {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*------ PARKING AREA STYLING -------- */
+
+.kantor {
+    height: 180px;
+    width: 280px;
+    position: absolute;
+    top: 35%;
+    margin: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--office-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.label {
+    font-family: "Roboto", sans-serif;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+    column-gap: 8px;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.pos {
+    background-color: var(--office-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+.seat {
+    border-radius: 10px;
+    background-color: #3d5661;
+}
+
+.seat-active {
+    border-radius: 10px;
+    background-color: var(--active-color) ;
+}
+
+.seat-shadow {
+    border: 2px dashed var(--base-color);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.seat-vertical {
+    width: 50px;
+    height: 80px;
+}
+
+.seat-horizontal {
+    width: 70px;
+    height: 50px;
+}
+
+
+/* ---------------- LEGEND ------------------ */
+
+.legend {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
+
+.legend-wrap {
+    position: absolute;
+    padding: 5px 20px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #f2f2f2;
+    width: fit-content;
+    column-gap: 10px;
+}
+
+.legend-wrap .box {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+}
+
+.legend-wrap-desc {
+    display: flex;
+    column-gap: 8px;
+}
+
+.legend-text {
+    font-family: "Roboto",sans-serif;
+}
+
+.legend-wrap .box .legend-text {
+    font-size: 12;
+    font-family: "Roboto", sans-serif;
+}
+
+.legend-shadow {
+    border: 1px dashed var(--base-color);
+}
+
+.legend-active {
+    background-color: var(--active-color);
+}
+
+.legend-empty {
+    background-color: var(--base-color);
+}
+
+
+/* ------ WHEN ON SMARTPHONE ------ */
+@media (max-width:1080px) {
+    .legend-wrap-desc {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:867px) {
+    .legend-wrap {
+        display: none;
+    }
+}
